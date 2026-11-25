@@ -4,3 +4,8 @@
     padding: 8px;
     border-bottom: 1px solid var(--border);
 }
+
+/* "Visualize Dimensional Relationship Set" under the hypercube picker */
+.drsButton {
+    margin-top: 8px;
+}

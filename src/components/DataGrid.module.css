@@ -36,8 +36,11 @@
     cursor: default;
 }
 
+/* concept labels: the column grows to fit the longest label instead of wrapping */
 .label {
     min-width: 200px;
+    max-width: none;
+    white-space: pre; /* keeps the indentation, never wraps */
 }
 
 .narrow {

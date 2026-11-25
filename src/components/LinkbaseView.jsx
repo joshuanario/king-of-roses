@@ -87,6 +87,11 @@ const LinkbaseView = (props) => {
                         value={String(partIndex())}
                         onChange={(v) => setPartIndex(Number(v))}
                     />
+                    <Show when={drs()}>
+                        <button class={`btn ${styles.drsButton}`} onClick={() => setDrsOpen(true)}>
+                            Visualize Dimensional Relationship Set
+                        </button>
+                    </Show>
                 </div>
             </Show>
 
