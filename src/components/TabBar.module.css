@@ -1,0 +1,48 @@
+.tabs {
+    display: flex;
+    flex-shrink: 0;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 2px;
+    scrollbar-width: thin;
+}
+
+.tab {
+    flex: 0 0 auto;
+    min-width: 150px;
+    max-width: 280px;
+    height: 40px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--tab-bg);
+    color: var(--tab-fg);
+    box-shadow: var(--shadow);
+    font: inherit;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.tab:hover {
+    background: var(--surface-hover);
+}
+
+.tab[aria-selected='true'] {
+    background: var(--tab-active-bg);
+    color: var(--tab-active-fg);
+}
+
+/* inline XBRL document tabs carry a marker in the highlight colour */
+.doc::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    border-radius: 2px;
+    background: var(--tab-doc-mark);
+    vertical-align: 1px;
+}

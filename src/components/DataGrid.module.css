@@ -1,0 +1,118 @@
+.scroller {
+    position: absolute;
+    inset: 0;
+    overflow: auto;
+    background: var(--surface);
+    outline: none;
+    --grid-line: #e2e2e2;
+    --grid-head-bg: #f6f6f6;
+    --grid-gutter-bg: #efefef;
+}
+
+.scroller:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.table {
+    width: max-content; /* columns keep their natural width; the scroller scrolls */
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: 'CarlitoRegular', var(--font-ui);
+    font-size: 12px;
+    line-height: 1.3;
+    color: #222;
+}
+
+.cell {
+    min-width: 120px;
+    max-width: 520px;
+    padding: 4px 10px;
+    border-right: 1px solid var(--grid-line);
+    border-bottom: 1px solid var(--grid-line);
+    background: var(--surface);
+    white-space: pre-wrap; /* leading whitespace is meaningful (label indentation) */
+    overflow-wrap: break-word; /* only very long names wrap; doesn't shrink columns */
+    vertical-align: top;
+    cursor: default;
+}
+
+.label {
+    min-width: 200px;
+}
+
+.narrow {
+    min-width: 0;
+    text-align: center;
+}
+
+.numeric {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+.mark {
+    margin-left: 2px;
+    font-size: 9px;
+    color: var(--accent-strong);
+}
+
+/* row-number gutter */
+.rowNum {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    min-width: 44px;
+    padding: 4px 8px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--grid-line);
+    background: var(--grid-gutter-bg);
+    color: var(--fg-muted);
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    user-select: none;
+}
+
+/* pinned label columns */
+.pinned {
+    position: sticky;
+    z-index: 1;
+}
+
+.lastPinned {
+    border-right: 1px solid var(--border);
+    box-shadow: 4px 0 6px -4px rgba(0, 0, 0, 0.12);
+}
+
+/* header rows (periods + dimensions) */
+.head .cell {
+    background: var(--grid-head-bg);
+    color: var(--fg-strong);
+}
+
+.head tr:last-child > * {
+    border-bottom: 1px solid var(--border);
+}
+
+.pinnedHead {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+.pinnedHead tr:last-child > * {
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.12);
+}
+
+tbody tr:hover > .cell {
+    background: #fafafa;
+}
+
+/* selected cell */
+/* opaque, so body text never shows through pinned cells */
+.scroller .cell.active {
+    background: #fff3dc;
+    box-shadow: inset 0 0 0 2px var(--accent);
+}

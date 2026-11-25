@@ -1,0 +1,38 @@
+.backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    padding: var(--gap);
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.dialog {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 8px 8px 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.title {
+    font-family: var(--font-title);
+    font-size: 18px;
+}
+
+.svg {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    color: #000;
+    cursor: grab;
+}

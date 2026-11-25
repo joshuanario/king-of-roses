@@ -1,0 +1,121 @@
+.inspector {
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.body {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 16px;
+}
+
+.concept {
+    font-family: var(--font-title);
+    font-size: 18px;
+    color: var(--fg-strong);
+    overflow-wrap: anywhere;
+}
+
+.conceptBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.conceptLink {
+    color: #1a5fb4;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+}
+
+.conceptLink:hover {
+    color: #0d3f80;
+    text-decoration-thickness: 2px;
+}
+
+.conceptLink:visited {
+    color: #1a5fb4;
+}
+
+.occurrences {
+    font-size: 12px;
+    color: var(--fg-muted);
+}
+
+.occurrences:empty {
+    display: none;
+}
+
+.fields {
+    display: grid;
+    grid-template-columns: minmax(90px, max-content) minmax(0, 1fr);
+    gap: 6px 16px;
+    margin: 0;
+}
+
+.fields dt {
+    color: var(--fg-muted);
+    overflow-wrap: anywhere;
+}
+
+.fields dd {
+    margin: 0;
+    color: var(--fg-strong);
+    overflow-wrap: anywhere;
+}
+
+.typed {
+    font-family: var(--font-mono);
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.heading {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+}
+
+.value {
+    font-size: 20px;
+    color: var(--fg-strong);
+    overflow-wrap: anywhere;
+}
+
+.narrative {
+    padding: 12px;
+    border-left: 3px solid var(--accent);
+    background: var(--surface-hover);
+    color: #000;
+    overflow-x: auto;
+    overflow-wrap: break-word;
+}
+
+.footnotes {
+    margin: 0;
+    padding-left: 24px;
+    color: var(--fg-strong);
+}
+
+.footnotes li + li {
+    margin-top: 8px;
+}

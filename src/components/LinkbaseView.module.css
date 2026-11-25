@@ -1,0 +1,6 @@
+/* full-width selectize bar, same as the entity / relationship set bars */
+.picker {
+    flex-shrink: 0;
+    padding: 8px;
+    border-bottom: 1px solid var(--border);
+}
